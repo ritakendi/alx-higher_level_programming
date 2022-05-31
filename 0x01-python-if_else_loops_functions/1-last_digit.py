@@ -7,7 +7,7 @@ else:
     ld = number % 10
 
 if ld > 5:
-    print(f"Last digit {number} is {ld:d} and is greater than 5")
+    print(f"Last digit of {number} is {ld:d} and is greater than 5")
 elif ld == 0:
     print(f"Last digit of {number} is {ld:d} and is 0")
 else:
