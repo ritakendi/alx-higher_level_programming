@@ -4,7 +4,5 @@ def uppercase(str):
         uni_code = ord(str[i])
         if uni_code >= 97 and uni_code <= 122:
             uni_code = uni_code - 32
-            print("{}".format(chr(uni_code)), end='')
-        else:
-            print("{}".format(chr(uni_code)), end='')
+        print("{}".format(chr(uni_code)), end='')
     print()
