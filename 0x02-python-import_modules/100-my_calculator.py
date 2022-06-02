@@ -8,18 +8,18 @@ if __name__ == "__main__":
 
     op = sys.argv[2]
     if op != '+' and op != '-' and op != '*' and op != '/':
-        print ("Unknown operator. Available operators: +, -, * and /n")
-    exit (1)
+        print("Unknown operator. Available operators: +, -, * and /n")
+    exit(1)
 
     from calculator_1 import add, sub, mul, div
     a = int(sys.argv[1])
     b = int(sys.argv[3])
 
     if op == '+':
-        print("{:d} + {:d}) = {:d}".format(a, b, add (a, b)))
+        print("{:d} + {:d}) = {:d}".format(a, b, add(a, b)))
     elif op == '-':
-        print("{:d} -{:d} = {:d}".format(a, b, sub (a,b)))
+        print("{:d} -{:d} = {:d}".format(a, b, sub(a, b)))
     elif op == '*':
-        print("{:d} * {:d} = {:d}".format(a, b, mul(a,b)))
+        print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
     else:
-        print("{:d} / {:d} = {:d}".format(a,b, add(a,b)))
+        print("{:d} / {:d} = {:d}".format(a, b, add(a, b)))
