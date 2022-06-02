@@ -7,7 +7,7 @@ Including builtin functions like dir() - which shows the number of names got fro
 | Filename | Description |  
 | -------- | ----------- |  
 | 0-add.py |  imports the function def add(a, b): from the file *[add_0.py](./0-add.py): and prints the result of the addition 1 + 2 = 3 |
-| 1-calculation.py | that imports functions from the file [calculator_1.py](./calculator.py):, does some Maths, and prints the result |  
+| 1-calculation.py | that imports functions from the file [calculator_1.py](./1-calculator.py):, does some Maths, and prints the result |  
 | 2-args.py | prints the number of and the list of its arguments.|
 | 3-infinite_add.py | prints the result of the addition of all arguments |
 | 5-variable_load.py |  imports the variable a from the file variable_load_5.py and prints its value. |  
