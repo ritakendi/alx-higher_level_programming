@@ -5,7 +5,7 @@ if __name__ == '__main__':
     if len(arguments) == 1:
         print(f"{len(arguments)} argument:")
     elif len(arguments) == 0:
-        print(f"{len(arguments)} argument.")
+        print(f"{len(arguments)} arguments.")
     else:
         print(f"{len(arguments)} arguments:")
     for index, arg in enumerate(arguments,):
