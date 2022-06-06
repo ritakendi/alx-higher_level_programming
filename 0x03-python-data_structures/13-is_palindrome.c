@@ -8,6 +8,7 @@
  */
 void reverse(listint_t **h_r)
 {
+<<<<<<< HEAD
 	listint_t *prv;
 	listint_t *crr;
 	listint_t *nxt;
@@ -24,6 +25,20 @@ void reverse(listint_t **h_r)
 	}
 
 	*h_r = prv;
+=======
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
+
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	*head = prev;
+>>>>>>> d12ae38c92664a3fbe092b07a7bc1c4e47f29237
 }
 
 /**
@@ -35,6 +50,7 @@ void reverse(listint_t **h_r)
  */
 int compare(listint_t *h1, listint_t *h2)
 {
+<<<<<<< HEAD
 	listint_t *tmp1;
 	listint_t *tmp2;
 
@@ -112,3 +128,43 @@ int is_palindrome(listint_t **head)
 
 	return (isp);
 }
+=======
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL
+
+		if (*head == NULL || (*head)->next == NULL)
+			return (1);
+	while  (1)
+	{
+		fast = fast->next->next;
+		if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
+	}
+
+	reverse_listint(&dup);
+
+	while (dup && temp)
+	{
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
+			return (0);
+	}
+
+	if (!dup)
+		return (1);
+
+	return (0);
+}
+>>>>>>> d12ae38c92664a3fbe092b07a7bc1c4e47f29237
