@@ -6,7 +6,7 @@ class Square:
 
     def __init__(self, size=0):
         """size must be an integer"""
-        
+
         if isinstance(size, int):
             if size >= 0:
                 self.__size = size
