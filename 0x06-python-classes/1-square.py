@@ -5,6 +5,7 @@ sets its size.
 
 """
 
+
 class Square():
     """Defines a square."""
 
