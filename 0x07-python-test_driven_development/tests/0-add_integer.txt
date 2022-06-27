@@ -1,0 +1,30 @@
+"""
+This is the "add_integer" module.
+
+The add_integer module supplies one function, add().
+>>> add(1, 2)
+3
+"""
+def add_integer(1,-3):
+""" Returns the addition of int 1, and int -3.
+>>>add_integer(1, -3)
+2
+
+>>> add_integer(1, -2)
+-1
+
+>>>add_integer(1, 2.5)
+3
+
+>>>add_integer(-1.5, -2.5)
+-3
+
+>>add_integer(1, float('2.4))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(1, float('inf'))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
