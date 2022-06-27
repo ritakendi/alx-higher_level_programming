@@ -6,7 +6,7 @@ A class that defines a rectangle
 
 class Rectangle:
     """Defines a rectangle
-    
+
     Attributes:
     __width: width of the rectangle
     __height: height of the rectangle
@@ -17,10 +17,10 @@ class Rectangle:
 
         Args:
             width (int): width of rect
-            height (int): height of rect  
+            height (int): height of rect
 
             Returns:
-                None   
+                None
         """
         self.__height = height
         self.__width = width
@@ -32,11 +32,11 @@ class Rectangle:
             The width of the rect
             """
         return self.__width
- 
+
     @width.setter
     def width(self, value):
         """setter of __width
-        
+
         Returns:
             None
         """
