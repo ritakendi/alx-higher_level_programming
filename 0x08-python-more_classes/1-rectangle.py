@@ -59,7 +59,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """setter of __height
-        
+
         Returns:
             None
         """
