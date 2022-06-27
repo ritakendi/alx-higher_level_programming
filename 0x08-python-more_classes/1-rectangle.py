@@ -49,15 +49,19 @@ class Rectangle:
 
     @property
     def height(self):
-        """setter of __height
+        """getter of __height
 
         Returns:
-            None
+            The width of the rect
         """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """setter of __height
+        Returns:
+            None
+        """
         if type(value) in [int]:
             if value < 0:
                 raise ValueError('height must be >= 0')
