@@ -52,7 +52,7 @@ class Rectangle:
         """getter of __height
 
         Returns:
-            The width of the rect
+            The height of the rect
         """
         return self.__height
 
