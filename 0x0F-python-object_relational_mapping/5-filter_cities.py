@@ -1,26 +1,46 @@
 #!/usr/bin/python3
-"""takes in the name of a state as an argument and lists all cities of that
-state, using the database hbtn_0e_4_usa
 """
-import sys
-import MySQLdb
+takes the name of a state as an argument and lists all cities of that state
+"""
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost",
-                         user=sys.argv[1],
-                         passwd=sys.argv[2],
-                         db=sys.argv[3],
-                         port=3306)
-    c = db.cursor()
-    c.execute("""SELECT cities.name FROM cities
-    JOIN states ON cities.state_id = states.id
-    WHERE states.name LIKE %s
-    ORDER BY cities.id ASC""", (sys.argv[4],))
-    result = c.fetchall()
-    res_len = len(result)
-    for i in range(res_len):
-        if i < res_len - 1:
-            print(result[i][0], end=", ")
-        else:
-            print(result[i][0])
-            
+
+import MySQLdb
+from sys import argv
+
+if __name__ == '__main__':
+    # required arguments
+    mysql_username = argv[1]
+    mysql_password = argv[2]
+    database_name = argv[3]
+    state_name = argv[4]
+
+    # connecting to the database using 'connect()' method
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=mysql_username,
+        passwd=mysql_password,
+        database=database_name
+    )
+
+    # creating an instance of 'cursor' class which is used to execute
+    # the 'SQL' statements in Python
+    cursor = db.cursor()
+
+    # getting all the states which are present in database
+    # 'execute()' method is used to compile a 'SQL' statement
+    cursor.execute("""SELECT cities.name
+    FROM cities INNER JOIN states ON cities.state_id = states.id
+    WHERE states.name = %s
+    ORDER BY cities.id ASC""", (state_name,))
+
+    # it returns list of cities present in the database
+    all_cities = cursor.fetchall()
+
+    # showing all the states one by one
+    result = []
+    for city in all_cities:
+        result.append(city[0])
+    print(", ".join(result))
+    cursor.close()
+    db.close()
