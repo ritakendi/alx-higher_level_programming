@@ -1,34 +1,32 @@
 #!/usr/bin/python3
-"""takes in an argumenyt(user input)
-    and displays all values inthe states table
-    where name matches the user input.
 """
+Script that lists all values in the `states` table of `hbtn_0e_0_usa`
+where `name` matches the argument `state name searched`.
+
+Arguments:
+    mysql username (str)
+    mysql password (str)
+    database name (str)
+    state name searched (str)
+"""
+
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    # arguments.
-    db = MySQLdb.connect(host="localhost",
-                         user=sys.argv[1],
-                         passwd=sys.argv[2],
-                         db=sys.argv[3],
-                         port=3306)
+    mySQL_u = sys.argv[1]
+    mySQL_p = sys.argv[2]
+    db_name = sys.argv[3]
 
-    # creating an instance of the 'cursor class' used to execute
-    # 'SQL queries.
-    c = db.cursor()
+    searched_name = sys.argv[4]
 
-    """taking the cursor object and calling the execute function
-        with the query and a tuple containing the values to substitute
-    """
-    c.execute("SELECT * FROM states WHERE name LIKE '{}'\
-    ORDER BY id ASC".format(sys.argv[4]))
+    # By default, it will connect to localhost:3306
+    db = MySQLdb.connect(user=mySQL_u, passwd=mySQL_p, db=db_name)
+    cur = db.cursor()
 
-    # returns a list of states inthe database.
-    result = c.fetchall()
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id"
+                .format(searched_name))
+    rows = cur.fetchall()
 
-    # print states one by one
-    for row in result:
+    for row in rows:
         print(row)
-    c.close()
-    db.close()
