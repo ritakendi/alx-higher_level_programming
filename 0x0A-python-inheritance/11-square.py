@@ -1,16 +1,22 @@
 #!/usr/bin/python3
-# 100-my_int.py
-# Brennan D Baraban <375@holbertonschool.com>
-"""Defines a class MyInt that inherits from int."""
+""" Class inherited from rectangle """
 
 
-class MyInt(int):
-    """Invert int operators == and !=."""
+Rectangle = __import__('9-rectangle').Rectangle
 
-    def __eq__(self, value):
-        """Override == opeartor with != behavior."""
-        return self.real != value
 
-    def __ne__(self, value):
-        """Override != operator with == behavior."""
-        return self.real == value
+class Square(Rectangle):
+    """ class Square that inherits from Rectangle (9-rectangle.py) """
+    def __init__(self, size):
+        """ Constructor maping size to parent constructor"""
+        self.__size = size
+        self.integer_validator("size", self.__size)
+        super().__init__(self.__size, self.__size)
+
+    def area(self):
+        """ Calling parent method area() """
+        return (super().area())
+
+    def __str__(self):
+        """ Calling parent method str() """
+        return "[Square] " + str(self.__size) + "/" + str(self.__size)
