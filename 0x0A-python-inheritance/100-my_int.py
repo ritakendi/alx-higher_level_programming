@@ -1,20 +1,13 @@
 #!/usr/bin/python3
-"""
-more class base
-"""
+""" Program that inherits from int class """
 
 
-Rectangle = __import__('9-rectangle').Rectangle
+class MyInt(int):
+    """ class MyInt that inherits from int """
+    def __eq__(self, other):
+        """ equal (=) inverted """
+        return False
 
-
-"""
-Square class
-"""
-
-
-class Square(Rectangle):
-    """ Square Class """
-    def __init__(self, size):
-        """ instantiation with size """
-        self.__size = size
-        super().__init__(self.__size, self.__size)
+    def __ne__(self, other):
+        "not equal (!=) inverted """
+        return True
